@@ -13,7 +13,8 @@ plot_stressor_per_city_chart <- function(source_data) {
     echarts4r::e_flip_coords() %>% 
     echarts4r::e_color(color = "#FCD34D") %>% 
     echarts4r::e_legend(show = FALSE) %>% 
-    echarts4r::e_format_x_axis(suffix = "%")
+    echarts4r::e_format_x_axis(suffix = "%") %>% 
+    echarts4r::e_grid(containLabel = TRUE)
 }
 
 plot_stressor_map <- function(source_data) {

@@ -5,9 +5,9 @@ account: ryszard-szymaski
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5856098
-bundleId: 5685592
+bundleId: 5688124
 url: https://ryszard-szymaski.shinyapps.io/bee_colony_losses/
-when: 1647332142.1611
-lastSyncTime: 1647332142.1611
+when: 1647371726.79352
+lastSyncTime: 1647371726.79352
 asMultiple: FALSE
 asStatic: FALSE

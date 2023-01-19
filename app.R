@@ -16,14 +16,25 @@ ui <- div(
   tags$script(src = "https://cdn.tailwindcss.com"),
   tags$script(src = "main.js"),
   div(
-    class = "mb-2 p-1.5",
-    span(
-      class = "text-lg",
-      "🐝",
+    class = "flex justify-between mr-8 mb-2 p-1.5",
+    div(
+      class = "flex items-center",
+      tags$a(
+        href = "https://appsilon.com/",
+        img(src = "appsilon-logo.png", style = "width: 150px")
+      ),
       span(
-        class = "font-bold",
-        " Bee Colonies"
+        class = "text-lg ml-2",
+        " 🐝",
+        span(
+          class = "font-bold",
+          " Bee Colonies"
+        )
       )
+    ),
+    div(
+      class = "flex items-center hover:text-sky-500",
+      tags$a(href = "https://appsilon.com/#contact", "Let's Talk")
     )
   ),
   div(

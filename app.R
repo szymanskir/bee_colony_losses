@@ -20,9 +20,9 @@ ui <- div(
     div(
       class = "flex items-center",
       tags$a(
+        img(src = "appsilon-logo.png", class = "w-32 hover:bg-gray-200 rounded-lg"),
         href = "https://appsilon.com/",
-        target = "blank",
-        img(src = "appsilon-logo.png", style = "width: 150px")
+        target = "blank"
       ),
       span(
         class = "text-lg ml-2",
@@ -35,7 +35,7 @@ ui <- div(
     ),
     div(
       class = "bg-white hover:bg-yellow-400 text-sm font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded shadow",
-      tags$a(href = "https://appsilon.com/#contact", "Let's Talk")
+      tags$a(href = "https://appsilon.com/#contact", target = "blank", "Let's Talk")
     )
   ),
   div(

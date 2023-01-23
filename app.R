@@ -16,7 +16,7 @@ ui <- div(
   tags$script(src = "https://cdn.tailwindcss.com"),
   tags$script(src = "main.js"),
   div(
-    class = "flex items-center justify-between mr-8 mb-2 p-1.5",
+    class = "flex items-center justify-between mr-6 ml-10 mb-2 p-1.5",
     div(
       class = "flex items-center",
       tags$a(

@@ -61,8 +61,7 @@ ui <- div(
   ),
   about_section,
   div(
-    class = "flex justify-center ml-10 mr-10 flex-col",
-    
+    class = "flex justify-center ml-10 mr-10 flex-col",    
     div(
       class = "shadow-md rounded-lg w-full m-2 border-t-4 border-yellow-300 bg-white",
       div(

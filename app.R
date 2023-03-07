@@ -47,6 +47,7 @@ ui <- div(
       )
     ),
     div(
+      class = "right-btns",
       about_ui("about_section"),
       div(
         class = "bg-white hover:bg-yellow-400 text-sm 

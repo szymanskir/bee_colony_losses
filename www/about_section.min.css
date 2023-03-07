@@ -3,6 +3,21 @@
   background: transparent;
 }
 
+.info-btn {
+  font-size: 2rem;
+  padding-right: 1rem;
+  color: black;
+}
+.info-btn:hover {
+  color: #facc15;
+}
+
+.right-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .ms-Modal.is-open.root-192 {
   top: 3rem;
 }

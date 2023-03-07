@@ -187,12 +187,13 @@ about_ui <- function(id) {
       tabindex = "-1",
       "aria-labelledby" = "exampleModalLabel",
       "aria-hidden" = "true",
+      "aria-modal" = "true",
       div(
         "data-te-modal-dialog-ref" = TRUE,
-        class = "pointer-events-none relative w-auto
-    translate-y-[-50px] opacity-0 transition-all
-    duration-300 ease-in-out min-[576px]:mx-auto
-    min-[576px]:mt-7 min-[576px]:max-w-[500px]",
+        class = "pointer-events-none relative w-auto translate-y-[-50px] 
+        opacity-0 transition-all duration-300 ease-in-out 
+        min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] 
+        min-[992px]:max-w-[800px]",
         div(
           class = "min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)]
       pointer-events-auto relative
@@ -203,20 +204,6 @@ about_ui <- function(id) {
             border-neutral-100 border-opacity-100 p-4 
             dark:border-opacity-50",
             about_section
-          ),
-          tags$button(
-            type = "button",
-            class = "inline-block rounded bg-primary-100 px-6
-          pt-2.5 pb-2 text-xs font-medium uppercase
-          leading-normal text-primary-700 transition
-          duration-150 ease-in-out
-          hover:bg-primary-accent-100
-          focus:bg-primary-accent-100 focus:outline-none
-          focus:ring-0 active:bg-primary-accent-200",
-            "data-te-modal-dismiss" = TRUE,
-            "data-te-ripple-init" = TRUE,
-            "data-te-ripple-color" = "light",
-            "Close"
           )
         )
       )

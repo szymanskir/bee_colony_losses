@@ -21,6 +21,9 @@ ui <- div(
     type = "text/css",
     href = "about_section.min.css"
   ),
+  tags$script(
+    src = "https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"
+  ),
   tags$script(src = "main.js"),
   div(
     class = "flex items-center justify-between mr-6 ml-10 mb-2 p-1.5",
@@ -56,6 +59,7 @@ ui <- div(
       )
     )
   ),
+  about_section,
   div(
     class = "flex justify-center ml-10 mr-10 flex-col",
     
@@ -110,12 +114,11 @@ ui <- div(
         class = "pt-2",
         echarts4rOutput("total_colonies", height = "340px")
       )
-    ),
+    )
   )
 )
 
 server <- function(input, output, session) {
-  
   about_server("about_section")
 
   session$sendCustomMessage(

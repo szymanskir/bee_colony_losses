@@ -111,21 +111,39 @@ appsilon <- function() {
 }
 
 about_section <- div(
-  id = "about_modal",
+  id = "overlay",
   "aria-hidden" = "true",
   "data-te-modal-init",
-  class = "fixed top-0 left-0 z-[1055]
-  hidden h-full w-full overflow-y-auto overflow-x-hidden
-  outline-none bg-black bg-opacity-50 absolute inset-0 flex 
-  justify-center item-center",
-  id = "exampleModal",
+  class = "bg-black bg-opacity-50
+  absolute inset-0 hidden justify-center
+  items-center w-max
+  z-50",
   tabindex = "-1",
   "aria-labelledby" = "exampleModalLabel",
   div(
-    class = "modal-dialog bg-gray-200",
+    class = "modal-dialog bg-gray-200
+    rounded shadow-xl z-30",
     div(
       class = "modal-title",
-      "Destination Overview"
+      div(
+        "Destination Overview",
+        div(
+          HTML(
+            '
+            <svg class="h-6 w-6 cursor-pointer p-1 
+            hover:bg-gray-300 rounded-full" id="close-modal" 
+            fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 
+                0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 
+                11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 
+                1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+              </svg>
+            '
+          )
+        )
+      )
     ),
     div(
       class = "about-section",
@@ -187,37 +205,18 @@ about_ui <- function(id) {
   ns <- NS(id)
 
   tagList(
-    about_section,
-    # div(
-    #   id = "info",
-    #   class = "info",
-    #   shiny::icon("info-circle")
-    # ),
-    tags$button(
+    div(
       id = "info",
-      type = "button",
-      class = "inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium
-      uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca]
-      transition duration-150 ease-in-out hover:bg-primary-600
-      hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
-      focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),
-      0_4px_18px_0_rgba(59,113,202,0.2)]
-      focus:outline-none focus:ring-0 active:bg-primary-700
-      active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]",
-      "data-te-toggle" = "modal",
-      "data-te-target" = "#exampleModal",
-      "data-te-ripple-init" = TRUE,
-      "data-te-ripple-color" = "light",
-      "Launch demo modal"
+      class = "info",
+      shiny::icon("info-circle")
     ),
     tags$script(
-      HTML(
-        sprintf(
-          fmt = "$('#info').click(() => {
-            Shiny.setInputValue('%s', 'event', { priority: 'event'})
-          })",
-          ns("open_modal")
-        )
+      sprintf(
+        fmt = "
+        $('#info').click( () => {
+          $('#overlay').toggleClass('hidden')
+        })
+        "
       )
     )
   )

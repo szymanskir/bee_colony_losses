@@ -1,5 +1,5 @@
 create_image_path <- function(path) {
-  base_path <- "static/img/"
+  base_path <- ""
   sprintf(
     fmt = "../%s/%s",
     base_path,
@@ -112,28 +112,11 @@ appsilon <- function() {
 
 about_section <- div(
   div(
-    class = "modal-dialog bg-gray-200
-    rounded shadow-xl z-30",
+    class = "modal-dialog",
     div(
       class = "modal-title",
       div(
         "Destination Overview",
-        div(
-          HTML(
-            '
-            <svg class="h-6 w-6 cursor-pointer p-1
-            hover:bg-gray-300 rounded-full" id="close-modal"
-            fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1
-                0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10
-                11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1
-                1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-              </svg>
-            '
-          )
-        )
       )
     ),
     div(
@@ -199,7 +182,7 @@ about_ui <- function(id) {
     div(
       "data-te-modal-init" = TRUE,
       class = "fixed top-0 left-0 z-[1055]
-  hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none",
+        hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none",
       id = "exampleModal",
       tabindex = "-1",
       "aria-labelledby" = "exampleModalLabel",
@@ -212,9 +195,8 @@ about_ui <- function(id) {
     min-[576px]:mt-7 min-[576px]:max-w-[500px]",
         div(
           class = "min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)]
-      pointer-events-auto relative flex w-full flex-col
-      rounded-md border-none bg-white bg-clip-padding
-      text-current shadow-lg outline-none dark:bg-neutral-600",
+      pointer-events-auto relative
+      rounded-md border-none bg-white",
           div(
             class = "flex flex-shrink-0 items-center 
             justify-between rounded-t-md border-b-2 

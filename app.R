@@ -59,7 +59,6 @@ ui <- div(
       )
     )
   ),
-  about_section,
   div(
     class = "flex justify-center ml-10 mr-10 flex-col",    
     div(

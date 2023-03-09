@@ -78,6 +78,10 @@
   font-weight: 400;
   font-size: 0.9em;
 }
+.about-section .about-descr > a {
+  color: #0099f9;
+  font-style: italic;
+}
 .about-section .about-header {
   font-family: "Maven Pro", sans-serif;
   font-style: normal;

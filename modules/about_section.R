@@ -123,12 +123,16 @@ about_section <- div(
       class = "about-section",
       topic_section(
         header = "About the project",
-        description = "This dashboard serves as a
-            showcase of R Shiny in the shipping and
-            logistics industry. Destination Overview
-            visualizes interstate shipment data, including
-            how many shipments are dispatched or received
-            by each state in a given month."
+        description = HTML("Bee Colonies is a Shiny dashboard 
+        that uses TailwindCSS and utility classes to design 
+        a sleek, custom UI with minimal lines of code. The 
+        inviting UI elements encourage users to explore the 
+        data and discover the alarming impact of stressors 
+        on disappearing bee colonies. Explore the <a 
+        class = 'app_href'
+        href = 'https://appsilon.com/how-to-use-tailwindcss-in-shiny/'>
+        tutorial to implement TailwindCSS </a> 
+        in your Shiny dashboard.")
       ),
       topic_section(
         header = "Dataset Info",
@@ -136,38 +140,6 @@ about_section <- div(
               transportation in US."
       ),
       hr(),
-      div(
-        h4(
-          class = "about-header",
-          "Powered by"
-        ),
-        div(
-          class = "card-section",
-          card(
-            href_link = "https://appsilon.github.io/shiny.semantic/",
-            img_link = create_image_path("shiny-semantic.png"),
-            card_header = "shiny.semantic",
-            card_text = "Shiny Semantic is a package developed by
-                  appsilon for the R community. With this library it is
-                  easy to wrap Shiny with Fomantic UI (previously
-                  Semantic). Add a few simple lines of code to give
-                  your UI a fresh, modern and highly interactive look."
-          ),
-          card(
-            href_link = "https://appsilon.github.io/rhino/",
-            img_link = create_image_path("rhino.png"),
-            card_header = "rhino",
-            card_text = "Rhino allows you to create Shiny apps The Appsilon
-                  Way - like a fullstack software engineer. Apply best
-                  software engineering practices, modularize your code,
-                  test it well, make UI beautiful, and think about
-                  user adoption from the very beginning. Rhino is an opinionated
-                  framework with a focus on software engineering practices
-                  and development tools."
-          ),
-          empty_card()
-        )
-      ),
       appsilon()
     )
   )

@@ -86,6 +86,11 @@ $aps-smry-color: #244059;
     font-style: normal;
     font-weight: 400;
     font-size: 0.9em;
+
+    & > a {
+    color: $aps-blue;
+    font-style: italic;
+    }
   }
 
   & .about-header {

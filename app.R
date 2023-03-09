@@ -2,10 +2,12 @@ library(echarts4r)
 library(magrittr)
 library(shiny)
 
+source("modules/about_section.R")
+
 colony <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-01-11/colony.csv')
 stressor <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-01-11/stressor.csv')
 
-stressor %<>% 
+stressor %<>%
   dplyr::mutate(
     stressor = ifelse(stressor == "Other pests/parasites", "Other pests", stressor),
     year_month = paste0(year, " ", months)
@@ -14,13 +16,24 @@ stressor %<>%
 ui <- div(
   class = "font-sans bg-slate-50",
   tags$script(src = "https://cdn.tailwindcss.com"),
+  tags$link(
+    rel = "stylesheet",
+    type = "text/css",
+    href = "about_section.min.css"
+  ),
+  tags$script(
+    src = "https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"
+  ),
   tags$script(src = "main.js"),
   div(
     class = "flex items-center justify-between mr-6 ml-10 mb-2 p-1.5",
     div(
       class = "flex items-center",
       tags$a(
-        img(src = "appsilon-logo.png", class = "w-32 hover:bg-gray-200 rounded-lg"),
+        img(
+          src = "appsilon-logo.png",
+          class = "w-32 hover:bg-gray-200 rounded-lg"
+        ),
         href = "https://appsilon.com/",
         target = "blank"
       ),
@@ -34,13 +47,21 @@ ui <- div(
       )
     ),
     div(
-      class = "bg-white hover:bg-yellow-400 text-sm font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded shadow",
-      tags$a(href = "https://appsilon.com/#contact", target = "blank", "Let's Talk")
+      class = "right-btns",
+      about_ui("about_section"),
+      div(
+        class = "bg-white hover:bg-yellow-400 text-sm 
+        font-semibold hover:text-white py-2 px-4 border 
+        border-black hover:border-transparent rounded shadow",
+        tags$a(
+          href = "https://appsilon.com/#contact", 
+          target = "blank", "Let's Talk"
+        )
+      )
     )
   ),
   div(
-    class = "flex justify-center ml-10 mr-10 flex-col",
-    
+    class = "flex justify-center ml-10 mr-10 flex-col",    
     div(
       class = "shadow-md rounded-lg w-full m-2 border-t-4 border-yellow-300 bg-white",
       div(
@@ -82,7 +103,6 @@ ui <- div(
         )
       )
     ),
-    
     div(
       class = "shadow-md rounded-lg w-full m-2 border-t-4 border-yellow-300 bg-white",
       div(
@@ -93,12 +113,13 @@ ui <- div(
         class = "pt-2",
         echarts4rOutput("total_colonies", height = "340px")
       )
-    ),
+    )
   )
 )
 
 server <- function(input, output, session) {
-  
+  about_server("about_section")
+
   session$sendCustomMessage(
     "updateSelectInputOptions",
     list(

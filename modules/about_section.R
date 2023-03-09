@@ -123,21 +123,43 @@ about_section <- div(
       class = "about-section",
       topic_section(
         header = "About the project",
-        description = HTML("Bee Colonies is a Shiny dashboard 
-        that uses TailwindCSS and utility classes to design 
-        a sleek, custom UI with minimal lines of code. The 
-        inviting UI elements encourage users to explore the 
-        data and discover the alarming impact of stressors 
-        on disappearing bee colonies. Explore the <a 
+        description = HTML("Bee Colonies is a Shiny dashboard
+        that uses TailwindCSS and utility classes to design
+        a sleek, custom UI with minimal lines of code. The
+        inviting UI elements encourage users to explore the
+        data and discover the alarming impact of stressors
+        on disappearing bee colonies. Explore the <a
         class = 'app_href'
         href = 'https://appsilon.com/how-to-use-tailwindcss-in-shiny/'>
-        tutorial to implement TailwindCSS </a> 
+        tutorial to implement TailwindCSS </a>
         in your Shiny dashboard.")
       ),
       topic_section(
         header = "Dataset Info",
-        description = "This is a cross-sectional data of shipments
-              transportation in US."
+        description = "This Dataset comes from United States department of
+        agriculture's published report. This report provides information on
+        honey bee colonies in terms of number of colonies, maximum, lost,
+        percent lost, added, renovated, and percent renovated, as well as
+        colonies lost with Colony Collapse Disorder symptoms with both over
+        and less than five colonies. Data can be directly downloaded from the
+        USDA website or Tidytuesday website."
+      ),
+      div(
+        class = "about-tag",
+        tag(
+          tag_string = "Tidy Tuesday",
+          hyperlink = paste0(
+            "https://github.com/rfordatascience/tidytuesday/blob/",
+            "master/data/2022/2022-01-11/readme.md"
+          )
+        ),
+        tag(
+          tag_string = "USDA website",
+          hyperlink = paste0(
+            "https://usda.library.cornell.edu/concern/publications/",
+            "rn301137d?locale=en"
+          )
+        )
       ),
       hr(),
       appsilon()
@@ -162,18 +184,18 @@ about_ui <- function(id) {
       "aria-modal" = "true",
       div(
         "data-te-modal-dialog-ref" = TRUE,
-        class = "pointer-events-none relative w-auto translate-y-[-50px] 
-        opacity-0 transition-all duration-300 ease-in-out 
-        min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px] 
+        class = "pointer-events-none relative w-auto translate-y-[-50px]
+        opacity-0 transition-all duration-300 ease-in-out
+        min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]
         min-[992px]:max-w-[800px]",
         div(
           class = "min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)]
       pointer-events-auto relative
       rounded-md border-none bg-white",
           div(
-            class = "flex flex-shrink-0 items-center 
-            justify-between rounded-t-md border-b-2 
-            border-neutral-100 border-opacity-100 p-4 
+            class = "flex flex-shrink-0 items-center
+            justify-between rounded-t-md border-b-2
+            border-neutral-100 border-opacity-100 p-4
             dark:border-opacity-50",
             about_section
           )
@@ -197,7 +219,9 @@ about_server <- function(id) {
     ns <- session$ns
 
     observeEvent(
-      input$open_modal, {
-    })
+      input$open_modal,
+      {
+      }
+    )
   })
 }
